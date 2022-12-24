@@ -1,0 +1,84 @@
+<html>
+<head>
+<style>
+  body {
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #7289DA;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin: 20px 0;
+}
+
+#login-button,
+#logout-button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #7289DA;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#audio-chat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#call-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#start-call-button,
+#end-call-button {
+  margin: 20px 0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #7289DA;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#local-audio,
+#remote-audio {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  object-fit: cover;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+</style>
+  <title>Audio Chat</title>
+</head>
+<body>
+  <h1>Audio Chat</h1>
+  <button id="login-button">Log in with Google</button>
+  <button id="logout-button" style="display:none">Log out</button>
+  <div id="audio-chat">
+    <div id="call-controls" style="display:none">
+      <button id="start-call-button">Start Call</button>
+      <button id="end-call-button" style="display:none">End Call</button>
+      <audio id="local-audio" autoplay></audio>
+      <audio id="remote-audio" autoplay></audio>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+  <script src="login.js"></script>
+  <script src="socket.io.js"></script>
+</body>
+</html>
